@@ -1,0 +1,16 @@
+# url_shortener.py
+
+url_dict = {}
+
+def shorten_url(long_url):
+    short_url = f"short.ly/{len(url_dict) + 1}"
+    url_dict[short_url] = long_url
+    return short_url
+
+def get_long_url(short_url):
+    return url_dict.get(short_url, "URL not found")
+
+# Sample usage
+short = shorten_url("https://www.example.com")
+print("Short URL:", short)
+print("Original URL:", get_long_url(short))
